@@ -263,11 +263,7 @@ static BOOL loggingEnabled = NO;
             if (![KeenClient validateKey:readKey]) {
                 return nil;
             }
-            self.readKey = readKey;
-        }
-    }
-    
-    return self;
+            self.readKey = readKey;han
 }
 
 - (void)dealloc {
@@ -843,6 +839,7 @@ static BOOL loggingEnabled = NO;
     if (error != NULL) {
         NSDictionary *userInfo = [NSDictionary dictionaryWithObject:errorMessage forKey:NSLocalizedDescriptionKey];
         *error = [NSError errorWithDomain:kKeenErrorDomain code:1 userInfo:userInfo];
+        KCLog(error);
     }
 }
                     
